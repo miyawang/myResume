@@ -1,98 +1,109 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>MiyaWang的个人简历</title>
-    <link rel="stylesheet" href="./a.css">
-  </head>
-  <body>
-    <div class="topNavBar clearfix">
-      <a class="logo" href="#" alt="logo" style="float: left; ">
-        <span class="rs">RS</span><span class="card">card</span>
-      </a>
-      <nav style="float: right;">
-        <ul class="clearfix">
-          <li><a href="#">关于</a></li>
-          <li><a href="#">技能</a></li>
-          <li><a href="#">作品</a></li>
-          <li><a href="#">博客</a></li>
-          <li><a href="#">日历</a></li>
-          <li><a href="#">联系方式</a></li>
-          <li><a href="#">其他</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="banner" style="background-image: url(#)"></div>
-    <main>
-      <div class="card">
-        <div class="pictureAndText">
-          <div class="picture">
-            <img src="" alt="头像">
-          </div>
-          <div class="text">
-            <div class="profile">
-              <span class="welcome">Hello</span>
-              <h1>MiyaWang</h1>
-              <p>前端开发工程师</p>
-              <hr>
-              <dl>
-                <dt>年龄</dt>
-                <dd>27</dd>
-                <dt>所在城市</dt>
-                <dd>杭州</dd>
-                <dt>邮箱</dt>
-                <dd>miyawang1019@gmail.com</dd>
-                <dt>手机</dt>
-                <dd>17357291062</dd>
-              </dl>
-            </div>
-          </div>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>王鲁晴的个人简历</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 头部，左边logo左浮动，右边导航右浮动 -->
+    <header class="header clearfix">
+        <div class="logo fll">
+            <span class="rs">RS</span>
+            <span class="card">card</span>
         </div>
-        <footer class="media">
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-          <a href="#"><img src="#" alt="..."></a>
-        </footer>
-      </div>
+        <nav class="top-nav flr">
+            <ul class="clearfix">
+                <li>
+                    <a href="#">ABOUT</a>
+                </li>
+                <li>
+                    <a href="#">EXPERIENCE</a>
+                </li>
+                <li>
+                    <a href="#">ACHIEVMENTS</a>
+                </li>
+                <li>
+                    <a href="#">PRICING</a>
+                </li>
+                <li>
+                    <a href="#">CLIENTS</a>
+                </li>
+                <li>
+                    <a href="#">CALENDAR</a>
+                </li>
+                <li>
+                    <a href="#">CONTACT</a>
+                </li>
+                <li>
+                    <a href="#">OTHER</a>
+                </li>
 
-      <a class="button" href="#">下载 PDF 简历</a>
-
-      <p>
-        王鲁晴<br>
-        技能：前端开发，HTML、CSS、JavaScript。
-      </p>
-
+            </ul>
+        </nav>
+    </header>
+    <!-- banner区域，背景图外面有个遮罩 -->
+    <div class="banner">
+        <div class="shadow">
+        </div>
+    </div>
+    <!-- 主要内容区域 -->
+    <main>
+        <div class="about clearfix">
+            <img src="" alt="头像" class="avatar fll">
+            <div class="about-me flr">
+                <h1>王鲁晴</h1>
+                <p>前端开发工程师</p>
+                <hr>
+                <dl>
+                    <dt>工作经验</dt>
+                    <dd>5年</dd>
+                    <dt>地址</dt>
+                    <dd>浙江省湖州市</dd>
+                    <dt>邮箱</dt>
+                    <dd>miyawang1019@gmail.com</dd>
+                    <dt>电话</dt>
+                    <dd>17357291062</dd>
+                </dl>
+            </div>
+            <footer class="contact">
+                <a href="#">
+                    <img src="" alt="">
+                </a>
+            </footer>
+            <a href="#" class="button">下载PDF简历</a>
+        <p>王鲁晴，前端开发工程师。
+             <br>技能：前端开发，HTML，CSS，JavaScript，Photoshop
+        </p>
     </main>
-    <section>
-      <h2>技能</h2>
-      <ol>
-        <li>HTML 5 &amp; CSS 3</li>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>Vue</li>
-        <li>React</li>
-        <li>HTTP</li>
-      </ol>
+    <section class="skill">
+       <h2>技能</h2> 
+       <ol>
+           <li>HTML5 &nbsp; CSS 3</li>
+           <li>JavaScript</li>
+           <li>jQuery</li>
+           <li>Vue</li>
+           <li>HTTP</li>           
+       </ol>
     </section>
-    <section>
-      <h2>作品集</h2>
-      <nav>
-        <ol>
-          <li>所有</li>
-          <li>框架</li>
-          <li>原生JS&amp;CSS</li>
-        </ol>
-      </nav>
-
-      <div class="jobs">
-        <div class="big"></div>
-        <div class="small"></div>
-        <div class="small"></div>
-      </div>
-
+    <section class="pro">
+        <nav>
+            <ol>
+                <li>所有</li>
+                <li>框架</li>
+                <li>原生JS&nbsp;CSS</li>
+            </ol>
+        </nav>
+        <div class="pro-all">
+            <div class="pro-main"></div>
+            <div class="pro-sec"></div>
+            <div class="pro-sec"></div>            
+        </div>
     </section>
-  </body>
+</body>
+
 </html>
