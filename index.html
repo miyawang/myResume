@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>王鲁晴的个人简历</title>
+    <title>MiyaWang的个人简历</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iconfont.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                     <a href="#">ABOUT</a>
                 </li>
                 <li>
-                    <a href="#">EXPERIENCE</a>
+                    <a href="#">SKILL</a>
                 </li>
                 <li>
                     <a href="#">ACHIEVMENTS</a>
@@ -48,18 +48,23 @@
     </header>
     <!-- banner区域，背景图外面有个遮罩 -->
     <div class="banner">
-        <div class="shadow">
+        <div class="mask">
         </div>
     </div>
     <!-- 主要内容区域 -->
-    <main>
+    <main class="main">
         <div class="about clearfix">
-            <img src="" alt="头像" class="avatar fll">
-            <div class="about-me flr">
-                <h1>王鲁晴</h1>
+            <img src="images/avatar.jpg" alt="头像" class="avatar fll">
+            <div class="about-me fll">
+                <span class="say">
+                    I'M
+                    <span class="triangle"></span>
+                </span>
+                <!-- <div class="triangle"></div> -->
+                <h1>MiyaWang</h1>
                 <p>前端开发工程师</p>
                 <hr>
-                <dl>
+                <dl class="fll">
                     <dt>工作经验</dt>
                     <dd>5年</dd>
                     <dt>地址</dt>
@@ -67,19 +72,24 @@
                     <dt>邮箱</dt>
                     <dd>miyawang1019@gmail.com</dd>
                     <dt>电话</dt>
-                    <dd>17357291062</dd>
+                    <dd>17300000000</dd>
+                    <dt>可到岗时间</dt>
+                    <dd>一周左右</dd>
                 </dl>
             </div>
-            <footer class="contact">
-                <a href="#">
-                    <img src="" alt="">
-                </a>
-            </footer>
-            <a href="#" class="button">下载PDF简历</a>
-        <p>王鲁晴，前端开发工程师。
+        </div>
+        <footer class="contact">
+            <a href="#"><i class="iconfont icon-github"></i> </a>
+            <a href="#"><i class="iconfont icon-zhihu"></i></a>
+            <a href="#"><i class="iconfont icon-linkedin"></i></a>
+            <a href="#"><i class="iconfont icon-ai-weixin"></i></a>
+            <a href="#"><i class="iconfont icon-ai-qq"></i></a>   
+        </footer>            
+    </main>
+    <a href="#" class="button">下载PDF简历</a>
+        <p>MiyaWang，前端开发工程师。
              <br>技能：前端开发，HTML，CSS，JavaScript，Photoshop
         </p>
-    </main>
     <section class="skill">
        <h2>技能</h2> 
        <ol>

@@ -17,8 +17,15 @@ a {
     color: inherit;
     text-decoration: none;
 }
+body {
+    background-color: #efefef;
+}
 .header {
-    margin: 30px 16px;;
+    margin: 30px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 .header .logo {
     color: #07aaf5;
@@ -50,20 +57,92 @@ a {
 .top-nav ul li a:hover {
     border-bottom: 3px solid #07aaf5;
 }
-/* .banner {
-    background:url(../images/resume-bg.jpg) center center no-repeat;
-} */
-.banner .shadow {
-    height: 516px;
-    background: #000;
-    opacity: 0.3;
+.banner {
+    background:url(../images/resume-bgi.jpg) center center no-repeat;
+    height: 515px;
+    background-size: cover;
+}
+.banner .mask {
+    height: 515px;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+.main {
+    max-width: 940px;
+    height: 532px;
+    margin: 0 auto;
 }
 .about {
-    width: 830px;
-    height: 432px;
-    /* margin: -348px auto 0; */
-    margin: 0 auto;
-    padding: 50px;;
-    border: 1px solid red;
+    padding: 50px;
+    background-color: #fff;
 }
+.about-me {
+    width: 472px;
+    margin-left: 62px;
+}
+.about-me .say {
+    color: #fff;
+    background-color: #07aaf5;
+    display: inline-block;
+    padding: 4px 13px;
+    position: relative;
+}
+.say .triangle {
+    position: absolute;
+    left: 5px;
+    top: 100%;
+    border:8px solid transparent;
+    width: 0;
+    border-left-color: #07aaf5;
+    border-top-width: 0;
+}
+.about-me h1 {
+    font-size: 36px;
+    margin-top: 24px;
+    margin-bottom: 6px;
+}
+.about-me p {
+    font-size: 18px;
+}
+.about-me hr {
+    margin: 25px 0;
+}
+.about-me dl {
+    line-height: 34px;
+    font-size: 14px;
+}
+.about-me dl dt {
+    float: left;
+    width: 27%;
+    font-weight: bold;
+
+}
+.about-me dl dd {
+    float: left;
+    width: 73%;
+    color: #9da0a7;
+}
+.main .contact {
+    background-color: #07aaf5;
+    /* line-height: 84px; */
+    text-align: center;
+    color: #fff;
+  
+}
+.contact i {   
+    font-size: 20px;
+    line-height: 40px;
+}
+.contact a {
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 40px;
+    margin:22px 60px;
+    border-radius: 50%;
+}
+.contact a:hover {
+    background-color: #0699dc;
+}
+
+
 
