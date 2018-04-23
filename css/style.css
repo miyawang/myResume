@@ -32,6 +32,9 @@ body {
   background-color: #efefef;
   color: #3d4451;
 }
+/* [data-x].active{
+  outline: 10px solid red;
+} */
 .header {
   /* margin: 30px 16px; */
   position: fixed;

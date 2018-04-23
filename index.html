@@ -31,7 +31,7 @@
                         <a href="#siteAbout">ABOUT</a>
                     </li>
                     <li>
-                        <a href="#siteSkill" >SKILL</a>
+                        <a href="#siteSkill">SKILL</a>
                     </li>
                     <li class="menu-trigger">
                         <a href="#siteWorks">WORKS</a>
@@ -59,7 +59,7 @@
                         <a href="#siteContact">CONTACT</a>
                     </li>
                     <li>
-                        <a href="#siteOther" >OTHER</a>
+                        <a href="#siteOther">OTHER</a>
                     </li>
 
                 </ul>
@@ -73,7 +73,7 @@
     </div>
     <!-- 主要内容区域 -->
     <main class="main container">
-        <div class="about clearfix" id="siteAbout">
+        <div data-x class="about clearfix" id="siteAbout">
             <img src="images/avatar.jpg" alt="头像" class="avatar fll">
             <div class="about-me fll">
                 <span class="say">
@@ -122,7 +122,7 @@
     <p class="introduction">MiyaWang，前端开发工程师。
         <br>技能：前端开发，HTML，CSS，JavaScript，Photoshop
     </p>
-    <section class="skill" id="siteSkill">
+    <section data-x class="skill" id="siteSkill">
         <h2>技能</h2>
         <ol class="container clearfix">
             <li>
@@ -164,7 +164,7 @@
 
         </ol>
     </section>
-    <section class="portfolio" id="siteWorks">
+    <section data-x class="portfolio" id="siteWorks">
         <h2>Portfolio</h2>
         <nav>
             <!-- <ol class="container clearfix"> -->
@@ -203,59 +203,83 @@
         </div>
 
     </section>
-<script>
-    // setTimeout(function () {
-    //     welcome.classList.remove('active')
-    // }, 3000)
-    window.onscroll = function (xxx) {
-        // console.log(window.scrollY); //用户滚动过的高度  js只做一件事：改变class
-        if (window.scrollY > 0) {
-            topNavBar.classList.add('sticky');
-        } else {
-            topNavBar.classList.remove('sticky');
+    <script>
+        // setTimeout(function () {
+        //     welcome.classList.remove('active')
+        // }, 3000)
+        window.onscroll = function (xxx) {
+            // console.log(window.scrollY); //用户滚动过的高度  js只做一件事：改变class
+            if (window.scrollY > 0) {
+                topNavBar.classList.add('sticky');
+            } else {
+                topNavBar.classList.remove('sticky');
+            }
         }
-    }
-    let liTags = document.getElementsByClassName('menu-trigger');
-    console.log(liTags);
-    for (let i = 0; i < liTags.length; i++) {
-     liTags[i].onmouseenter = function (x) {
-        let li = x.currentTarget;
-        let brother = li.getElementsByTagName('ul')[0];
-        brother.classList.add('active');
-        console.log(brother);
+        let liTags = document.getElementsByClassName('menu-trigger');
+        console.log(liTags);
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (x) {
+                let li = x.currentTarget;
+                let brother = li.getElementsByTagName('ul')[0];
+                brother.classList.add('active');
+                // console.log(brother);
+            }
+            liTags[i].onmouseleave = function (x) {
+                let li = x.currentTarget;
+                let brother = li.getElementsByTagName('ul')[0];
+                // console.log('mouseleave');
+                brother.classList.remove('active');
+                // console.log(brother);
+            }
         }
-        liTags[i].onmouseleave = function (x) {
-            let li = x.currentTarget;
-            let brother = li.getElementsByTagName('ul')[0];
-            console.log('mouseleave');
-            brother.classList.remove('active');
-            console.log(brother);
+        console.log('window.scrollY');
+        console.log(window.scrollY);
+        let specialTags = document.querySelectorAll('[data-x]');
+        let minIndex = 0;
+        for(let i = 0; i <specialTags.length; i++){
+            // console.log(specialTags[i].offsetTop);
+            if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+                minIndex = i;
+            }
+            
         }
-    }
+        console.log(minIndex);
+       
+        
 
-    let aTags =document.querySelectorAll('nav > ul > li > a');
-    // console.log(aTags);
-    for(let i = 0; i < aTags.length; i++){
-        aTags[i].onclick = function(x){
-            x.preventDefault();  //阻止默认动作
-            let a = x.currentTarget;
-            let href = a.getAttribute('href'); //不做任何处理  如果直接是a 则是被浏览器除了过的 带http的
-            // console.log(a.getAttribute('href'));
-            let element = document.querySelector(href);
-            let rect = element.getBoundingClientRect();
-            console.log(rect.top);
-            let top = element.offsetTop;
-            window.scrollTo(0,top - 40);
-            
-            
-             
-            
-            
-            
+        
+
+        let aTags = document.querySelectorAll('nav > ul > li > a');
+        // console.log(aTags);
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
+                x.preventDefault();  //阻止默认动作
+                let a = x.currentTarget;
+                let href = a.getAttribute('href'); //不做任何处理  如果直接是a 则是被浏览器除了过的 带http的
+                // console.log(a.getAttribute('href'));
+                let element = document.querySelector(href);
+                let rect = element.getBoundingClientRect();
+                // console.log(rect.top);
+                let top = element.offsetTop;
+                let n = 25; //一共动多少次
+                let duration = 500 / n;  //多长时间移动一次
+                let currentTop = window.scrollY
+                let targetTop = top - 40;
+                let distance = (targetTop - currentTop) / n
+                let i = 0;
+               let id = setInterval(() => {
+                    if(i === n){ 
+                      window.clearInterval(id)
+                      return
+                    }
+                    i = i + 1
+                    window.scrollTo(0, currentTop + distance * i)
+                }, duration)
+                // window.scrollTo(0,top - 40);
+            }
         }
-    }
-    
-</script>
+        
+    </script>
 </body>
 
 </html>
