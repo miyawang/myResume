@@ -9,14 +9,12 @@
 
     <!-- <link rel="stylesheet" href="css/loading.css"> -->
     <link rel="stylesheet" href="css/iconfont.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="welcome" class="welcome active">
-        <div class="loading"></div>
-    </div>
-
     <!-- 头部，左边logo左浮动，右边导航右浮动 -->
     <header class="header clearfix">
         <div id="topNavBar" class="top-nav">
@@ -24,14 +22,14 @@
                 <span class="rs">RS</span>
                 <span class="card">card</span>
             </div>
-            <nav class="flr">
+            <nav class="menu flr">
                 <!--sticky  黏住了-->
                 <ul class="clearfix">
                     <li>
                         <a href="#siteAbout">ABOUT</a>
                     </li>
                     <li>
-                        <a href="#siteSkill">SKILL</a>
+                        <a href="#siteSkills">SKILL</a>
                     </li>
                     <li class="menu-trigger">
                         <a href="#siteWorks">WORKS</a>
@@ -47,9 +45,9 @@
                     <li class="menu-trigger">
                         <a href="#siteClients">CLIENTS</a>
                         <ul class="submenu">
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
+                            <li>1111</li>
+                            <li>2222</li>
+                            <li>3333</li>
                         </ul>
                     </li>
                     <li>
@@ -72,9 +70,10 @@
         </div>
     </div>
     <!-- 主要内容区域 -->
+
     <main class="main container">
         <div data-x class="about clearfix" id="siteAbout">
-            <img src="images/avatar.jpg" alt="头像" class="avatar fll">
+            <img src="images/xxx.jpg" alt="头像" class="avatar fll">
             <div class="about-me fll">
                 <span class="say">
                     I'M
@@ -98,7 +97,7 @@
                 </dl>
             </div>
         </div>
-        <footer class="contact">
+        <footer class="contact media">
             <a href="#">
                 <i class="iconfont icon-github"></i>
             </a>
@@ -122,7 +121,7 @@
     <p class="introduction">MiyaWang，前端开发工程师。
         <br>技能：前端开发，HTML，CSS，JavaScript，Photoshop
     </p>
-    <section data-x class="skill" id="siteSkill">
+    <section data-x class="skill" id="siteSkills">
         <h2>技能</h2>
         <ol class="container clearfix">
             <li>
@@ -166,120 +165,42 @@
     </section>
     <section data-x class="portfolio" id="siteWorks">
         <h2>Portfolio</h2>
-        <nav>
-            <!-- <ol class="container clearfix"> -->
-            <ol class="clearfix">
-                <li id="por1">所有</li>
-                <li id="por2">框架</li>
-                <li id="por3">原生JS &amp; CSS</li>
-            </ol>
-            <div id="porSlider" class="slider state-1">
-                <div class="slider-bar">
-
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src="./project/nav.jpg" alt="图片" class="swiper-slide">
+                    <img src="./project/slide.jpg" alt="图片" class="swiper-slide">
+                    <img src="./project/canvas.jpg" alt="图片" class="swiper-slide">
                 </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
             </div>
-            <script>
-                por1.onclick = function () {
-                    porSlider.className = "slider state-1"
-                }
-                por2.onclick = function () {
-                    porSlider.className = "slider state-2"
-                }
-                por3.onclick = function () {
-                    porSlider.className = "slider state-3"
-                }
-            </script>
-        </nav>
-        <div class="por-all">
-            <div>
-                <img src="images/1.jpg" alt="作品1" class="por-1">
-            </div>
-            <div>
-                <img src="images/2.jpg" alt="作品2" class="por-2">
-            </div>
-            <div>
-                <img src="images/3.jpg" alt="作品3" class="por-3">
-            </div>
-        </div>
-
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
     </section>
-    <script>
-        // setTimeout(function () {
-        //     welcome.classList.remove('active')
-        // }, 3000)
-        window.onscroll = function (xxx) {
-            // console.log(window.scrollY); //用户滚动过的高度  js只做一件事：改变class
-            if (window.scrollY > 0) {
-                topNavBar.classList.add('sticky');
-            } else {
-                topNavBar.classList.remove('sticky');
-            }
-        }
-        let liTags = document.getElementsByClassName('menu-trigger');
-        console.log(liTags);
-        for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function (x) {
-                let li = x.currentTarget;
-                let brother = li.getElementsByTagName('ul')[0];
-                brother.classList.add('active');
-                // console.log(brother);
-            }
-            liTags[i].onmouseleave = function (x) {
-                let li = x.currentTarget;
-                let brother = li.getElementsByTagName('ul')[0];
-                // console.log('mouseleave');
-                brother.classList.remove('active');
-                // console.log(brother);
-            }
-        }
-        console.log('window.scrollY');
-        console.log(window.scrollY);
-        let specialTags = document.querySelectorAll('[data-x]');
-        let minIndex = 0;
-        for(let i = 0; i <specialTags.length; i++){
-            // console.log(specialTags[i].offsetTop);
-            if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-                minIndex = i;
-            }
-            
-        }
-        console.log(minIndex);
-       
-        
-
-        
-
-        let aTags = document.querySelectorAll('nav > ul > li > a');
-        // console.log(aTags);
-        for (let i = 0; i < aTags.length; i++) {
-            aTags[i].onclick = function (x) {
-                x.preventDefault();  //阻止默认动作
-                let a = x.currentTarget;
-                let href = a.getAttribute('href'); //不做任何处理  如果直接是a 则是被浏览器除了过的 带http的
-                // console.log(a.getAttribute('href'));
-                let element = document.querySelector(href);
-                let rect = element.getBoundingClientRect();
-                // console.log(rect.top);
-                let top = element.offsetTop;
-                let n = 25; //一共动多少次
-                let duration = 500 / n;  //多长时间移动一次
-                let currentTop = window.scrollY
-                let targetTop = top - 40;
-                let distance = (targetTop - currentTop) / n
-                let i = 0;
-               let id = setInterval(() => {
-                    if(i === n){ 
-                      window.clearInterval(id)
-                      return
-                    }
-                    i = i + 1
-                    window.scrollTo(0, currentTop + distance * i)
-                }, duration)
-                // window.scrollTo(0,top - 40);
-            }
-        }
-        
-    </script>
+    <section class="message">
+        <h2>留言</h2>
+        <ol id="messageList">
+        </ol>
+        <form id="postMessageForm" style="width: 700px; margin: 50px auto;">
+          <label for="">姓名</label>
+          <input type="text" name="name">
+          <label for="">内容</label>
+          <input type="text" name="content">
+          <input type="submit" value="提交">
+        </form>
+      </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+    <!-- <script src="//cdn1.lncld.net/static/js/3.5.0/av-min.js"></script> -->
+    <script src="./index.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
+    <script src="./js/sticky-topbar.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
 </body>
 
 </html>
